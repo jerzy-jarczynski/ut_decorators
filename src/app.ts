@@ -8,7 +8,7 @@ function Logger(logString: string) {
 
 function WithTemplate(template: string, hookId: string) {
   console.log('TEMPLATE FACTORY');
-  return function <T extends { new (...args: any[]): {name: string} }>(
+  return function <T extends { new (...args: any[]): { name: string } }>(
     originalConstructor: T
   ) {
     return class extends originalConstructor {
